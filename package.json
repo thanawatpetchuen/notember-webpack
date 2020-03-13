@@ -4,9 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --mode=production",
     "start": "webpack --mode=development",
     "dev": "webpack-dev-server",
+    "build": "npm run lint && webpack --mode=production",
     "lint": "eslint ./src"
   },
   "devDependencies": {
