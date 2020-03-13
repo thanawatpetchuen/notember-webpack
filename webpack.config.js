@@ -16,13 +16,16 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules)/,
-        use: {
+        use: [{
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env', '@babel/preset-react'],
-            plugins: ['react-hot-loader/babel'],
+            plugins: ['react-hot-loader/babel', 'babel-plugin-styled-components'],
           },
         },
+        {
+          loader: 'stylelint-custom-processor-loader',
+        }],
       },
       {
         test: /\.css$/,
@@ -37,6 +40,9 @@ module.exports = {
         ],
       },
     ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
   },
   devtool: 'cheap-module-eval-source-map',
   devServer: {

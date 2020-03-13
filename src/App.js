@@ -1,14 +1,16 @@
 import React from 'react';
-import './App.css';
 import { hot } from 'react-hot-loader';
+import { ThemeProvider } from 'styled-components';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Routes from './routes';
+import theme from './theme';
 
 const App = () => (
-  <div style={{ display: 'flex', justifyContent: 'center' }}>
-    <div>
-      <h1>NOTEMBER Webpack</h1>
-      <img src="logo.png" alt="logo" style={{ width: '300px' }} />
-    </div>
-  </div>
+  <ThemeProvider theme={theme}>
+    <Router>
+      <Routes />
+    </Router>
+  </ThemeProvider>
 );
 
 export default hot(module)(App);

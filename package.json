@@ -6,14 +6,16 @@
   "scripts": {
     "start": "webpack --mode=development",
     "dev": "webpack-dev-server",
-    "build": "npm run lint && webpack --mode=production",
-    "lint": "eslint ./src"
+    "build": "npm run lint && npm run lint:css && webpack --mode=production",
+    "lint": "eslint ./src",
+    "lint:css": "stylelint './src/**/*.js'"
   },
   "devDependencies": {
     "@babel/core": "7.8.7",
     "@babel/preset-env": "7.8.7",
     "@babel/preset-react": "7.8.3",
     "babel-loader": "8.0.6",
+    "babel-plugin-styled-components": "1.10.7",
     "clean-webpack-plugin": "3.0.0",
     "copy-webpack-plugin": "5.1.1",
     "css-loader": "3.4.2",
@@ -27,12 +29,19 @@
     "path": "0.12.7",
     "react-hot-loader": "4.12.19",
     "style-loader": "1.1.3",
+    "styled-components": "5.0.1",
+    "stylelint": "13.2.1",
+    "stylelint-config-recommended": "3.0.0",
+    "stylelint-config-styled-components": "0.1.1",
+    "stylelint-custom-processor-loader": "0.6.0",
+    "stylelint-processor-styled-components": "1.10.0",
     "webpack": "4.42.0",
     "webpack-cli": "3.3.11",
     "webpack-dev-server": "3.10.3"
   },
   "dependencies": {
     "react": "16.13.0",
-    "react-dom": "16.13.0"
+    "react-dom": "16.13.0",
+    "react-router-dom": "5.1.2"
   }
 }
