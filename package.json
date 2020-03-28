@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack --mode=development",
     "dev": "webpack-dev-server",
-    "build": "npm run lint && npm run lint:css && webpack --mode=production",
+    "build": "npm run lint && webpack --mode=production",
     "lint": "eslint ./src",
     "lint:css": "stylelint './src/**/*.js'"
   },
